@@ -108,3 +108,4 @@ while True:
     except Exception as e:
         print("❌ POLLING ERROR:", e)
         time.sleep(5)
+        bot.infinity_polling(skip_pending=True, timeout=20, long_polling_timeout=10)
