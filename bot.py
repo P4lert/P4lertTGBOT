@@ -100,3 +100,11 @@ def ban(message):
     bot.reply_to(message, f"🚫 бан на {args[1]}")
 
     threading.Thread(target=unban, args=(chat_id, user_id, seconds)).start()
+print("🚀 BEFORE POLLING START")
+
+while True:
+    try:
+        bot.infinity_polling()
+    except Exception as e:
+        print("❌ POLLING ERROR:", e)
+        time.sleep(5)
